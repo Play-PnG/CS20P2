@@ -8,14 +8,21 @@ public class Delivery {
 	{
 		Scanner input = new Scanner(System.in);
 		
-		System.out.print("Please enter a height: ");
-		int len = input.nextInt();
+		System.out.print("Please the length of the package: ");
+		double length = input.nextDouble();
 		
-		System.out.print("Please enter a width: ");
-		int wid = input.nextInt();
+		System.out.print("Please the width of the package: ");
+		double width = input.nextDouble();
 		
-		System.out.print("Please enter a height: ");
-		int hei = input.nextInt();
+		System.out.print("Please the height of the package: ");
+		double height = input.nextDouble();
+		
+		if (length <= 10 && width <= 10 && height <= 10) {
+            System.out.println("\nPackage Accepted.");
+        
+		 } else {
+			 System.out.println("\nPackage Rejected: dimensions are greater than 10.");
+		 }
 		
 		
 	}
