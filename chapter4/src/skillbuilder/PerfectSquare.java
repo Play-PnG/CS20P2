@@ -7,7 +7,7 @@ public class PerfectSquare {
 	public static void main(String[] args) 
 	{
 		Scanner input = new Scanner(System.in);
-		
+
 		System.out.print("Please enter a integer: ");
 		int number = input.nextInt();
 		
@@ -23,7 +23,6 @@ public class PerfectSquare {
             System.out.println(number + " is not a perfect square.");
         }
 
-		
 	}
 
 }
