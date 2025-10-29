@@ -23,7 +23,6 @@ public class PerfectSquare {
             System.out.println(number + " is not a perfect square.");
         }
 
-		
 	}
 
 }
