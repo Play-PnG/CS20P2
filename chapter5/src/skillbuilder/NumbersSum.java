@@ -1,7 +1,7 @@
-package mastery;
+package skillbuilder;
 import java.util.Scanner;
 
-public class random_numbers {
+public class NumbersSum {
 
 	
 	public static void main(String[] args) 
