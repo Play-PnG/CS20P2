@@ -15,7 +15,7 @@ public class TimeConverter {
      
      int choice = input.nextInt();
      
-     System.out.print("Enter the time value to convert: ");
+     System.out.print("Enter a time to convert: ");
      double time = input.nextDouble();
 
      double convertedTime = 0; 
@@ -34,7 +34,7 @@ public class TimeConverter {
          convertedTime = time / 24;  
          resultMessage = time + " hour(s) = " + convertedTime + " day(s)";
      } else {
-         resultMessage = "Invalid choice!";
+         resultMessage = "Error!";
      }
      
      System.out.println(resultMessage);
