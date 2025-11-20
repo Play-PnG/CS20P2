@@ -14,6 +14,34 @@ public class Student
 		address ="####";
 		stuID = 0000;
 	}
+	public Student(String f, String l, String ad, int id)// overload contractor
+	{
 	
-  }
+		firstName = f;
+		lastName =l;
+		address = ad;
+		stuID = id;
+		
+	}
+		//Accessed method
+		public String getFirstName()
+		{
+			return firstName;
+			
+		}
+		
+		public void setFirstName(String f)
+		{
+			firstName = f;
+		}
+	
+		public String toString()
+		{
+			return("First name:" + firstName
+					+"\nlast name: "+ lastName
+					+"\n Address: " + address
+					+"\n Student ID"+ stuID);
+		}
 
+
+}

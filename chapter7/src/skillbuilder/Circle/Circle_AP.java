@@ -9,7 +9,7 @@ public class Circle_AP {
     public Circle_AP(double radius) {
         this.radius = radius;
     }
-
+    
     
     public double area() {
         return Math.PI * radius * radius;
@@ -41,6 +41,11 @@ public class Circle_AP {
     
     @Override
     public boolean equals(Object obj) {
+    
+    	if (this == obj) {
+            return true;
+        }
+    	
         if (obj instanceof Circle_AP) {
         	Circle_AP other = (Circle_AP) obj;
             return this.radius == other.radius;
