@@ -1,6 +1,5 @@
 package mastery;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class LunchOrder_Test {
@@ -8,51 +7,49 @@ public class LunchOrder_Test {
 		
 		Scanner input = new Scanner(System.in);
 		
+		int quantity;
+		double orderTotal = 0;
 		
-		LunchOrder[] menu = {
-	    new LunchOrder("Hamburger", 1.85, 9, 33, 1),
-	    new LunchOrder("Salad", 2.00, 1, 11, 5),
-	    new LunchOrder("French fries", 1.30, 11, 36, 4),
-	    new LunchOrder("Soda", 0.95, 0, 38, 0),
-		};     
-	        
-		// Show menu
-        System.out.println("Menu:");
-        for (int i = 0; i < menu.length; i++) {
-            System.out.println((i + 1) + ". " + menu[i].toString());
-        }
-
-        ArrayList<LunchOrder> order = new ArrayList<>();
-
-        int choice = -1;
-
-        System.out.println("\nEnter the item number to add to your order.");
-        System.out.println("Type 0 when you are done.\n");
-
-        //Ask until user enters 0
-        while (choice != 0) {
-            System.out.print("Choose an item (1-4, or 0 to finish): ");
-            choice = input.nextInt();
-
-            if (choice >= 1 && choice <= menu.length) {
-                order.add(menu[choice - 1]);
-                System.out.println(menu[choice - 1].getName() + " added!");
-            } else if (choice != 0) {
-                System.out.println("Invalid input. Try again.");
-            }
-        }
-
-        // Show all items ordered
-        System.out.println("\nYour Order:");
-        double totalPrice = 0;
-
-        for (LunchOrder item : order) {
-            System.out.println("- " + item.getName() + " : $" + item.getPrice());
-            totalPrice += item.getPrice();
-        }
-
-        // Show total price
-        System.out.printf("\nTotal Price: $%.2f\n", totalPrice);
+		LunchOrder hamburger = new LunchOrder("Hamburger", 1.85, 9, 33, 1);
+	   
+	    //process hamburger orders 
+		System.out.print("Enter number of hamburgers: ");
+		quantity = input.nextInt();
+		orderTotal += quantity* hamburger.getPrice();
+		System.out.print("Each hamburger has " + hamburger.getFat() + "g of fat, ");
+		System.out.print(hamburger.getCarbohydrates() + "g of carbs, and ");
+		System.out.println(hamburger.getFiber() + "g of fiber.\n");
+	   
+	   
+		LunchOrder salad = new LunchOrder("Salad", 2.00, 1, 11, 5);
+		//process salad orders 
+		System.out.print("Enter number of salads: ");
+		quantity = input.nextInt();
+		orderTotal += quantity* salad.getPrice();
+		System.out.print("Each salad has " + salad.getFat() + "g of fat, ");
+		System.out.print(salad.getCarbohydrates() + "g of carbs, and ");
+		System.out.println(salad.getFiber() + "g of fiber.\n");
+		
+		LunchOrder french_fries = new LunchOrder("French fries", 1.30, 11, 36, 4);
+		//process french_fries orders 
+		System.out.print("Enter number of french fries: ");
+		quantity = input.nextInt();
+		orderTotal += quantity* french_fries.getPrice();
+		System.out.print("Each french fries has " + french_fries.getFat() + "g of fat, ");
+		System.out.print(french_fries.getCarbohydrates() + "g of carbs, and ");
+		System.out.println(french_fries.getFiber() + "g of fiber.\n");
+		
+		LunchOrder soda = new LunchOrder("Soda", 0.95, 0, 38, 0);
+		//process soda orders 
+		System.out.print("Enter number of Sodas: ");
+		quantity = input.nextInt();
+		orderTotal += quantity* soda.getPrice();
+		System.out.print("Each Soda has " + soda.getFat() + "g of fat, ");
+		System.out.print(soda.getCarbohydrates() + "g of carbs, and ");
+		System.out.println(soda.getFiber() + "g of fiber.\n");
+		
+	
+		System.out.printf("\nTotal Price: $%.2f\n", orderTotal);
         
     }
 }
