@@ -9,7 +9,7 @@ public class PennyPitch {
 		// A 5x5 board 
         String[] board = new String[25];
 
-        // Fill board with empty marker
+        // Fill board with empty marker [-]
         for (int i = 0; i < board.length; i++) {
             board[i] = "-";
         }
