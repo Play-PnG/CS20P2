@@ -32,19 +32,47 @@ public class GettingstartedCom {
 
         //Use your Phidgets | This code will turn on the LED when the matching button is pressed and turns off the LED when the matching button is released. 
         //The sleep function slows down the loop so the button state is only checked every 150ms.
-        while(true){
+        boolean lastRedState = redButton.getState();
+        boolean lastGreenState = greenButton.getState();
 
-            if( redButton.getState()){
-            	greenLED.setState(true);
+        // Counter for total presses
+        int totalPresses = 0;
+
+        while (true) {
+
+            //Red Button
+            boolean redState = redButton.getState();
+
+            if (redState) {
+                redLED.setState(true);
             } else {
-            	greenLED.setState(false);
+                redLED.setState(false);
             }
 
-            if(greenButton.getState()){
-            	redLED.setState(true);
-            } else {
-            	redLED.setState(false);
+            // Count red button press (false → true)
+            if (redState && !lastRedState) {
+                totalPresses++;
+                System.out.println("Total button presses: " + totalPresses);
             }
+
+            lastRedState = redState;
+
+            //Green Button
+            boolean greenState = greenButton.getState();
+
+            if (greenState) {
+                greenLED.setState(true);
+            } else {
+                greenLED.setState(false);
+            }
+
+            // Count green button press (false → true)
+            if (greenState && !lastGreenState) {
+                totalPresses++;
+                System.out.println("Total button presses: " + totalPresses);
+            }
+
+            lastGreenState = greenState;
 
             Thread.sleep(150);
         }
